@@ -1,0 +1,123 @@
+/* Variables CSS globales para CKEditor - Tema Oscuro */
+:root {
+  /* Variables base para tema claro */
+  --ck-color-base-background: #ffffff;
+  --ck-color-base-foreground: #fafafa;
+  --ck-color-base-border: #c4c4c4;
+  --ck-color-base-action: #61b045;
+  --ck-color-base-focus: #6cb5f9;
+  --ck-color-base-text: #333333;
+  --ck-color-base-active: #198cf0;
+  --ck-color-base-active-focus: #0e7fe1;
+  --ck-color-focus-border: #47a4f5;
+  --ck-color-text: #333333;
+  --ck-color-shadow-drop: rgba(0, 0, 0, 0.15);
+  --ck-color-shadow-inner: rgba(0, 0, 0, 0.1);
+
+  /* Variables para botones */
+  --ck-color-button-default-background: transparent;
+  --ck-color-button-default-hover-background: #e6e6e6;
+  --ck-color-button-default-active-background: #d9d9d9;
+  --ck-color-button-default-disabled-background: transparent;
+  --ck-color-button-on-background: #e1f5fe;
+  --ck-color-button-on-hover-background: #b3e5fc;
+  --ck-color-button-on-active-background: #81d4fa;
+
+  /* Variables para toolbar */
+  --ck-color-toolbar-background: #f5f5f5;
+  --ck-color-toolbar-border: #c4c4c4;
+
+  /* Variables para dropdown */
+  --ck-color-dropdown-panel-background: #ffffff;
+  --ck-color-dropdown-panel-border: #c4c4c4;
+
+  /* Variables para input */
+  --ck-color-input-background: #ffffff;
+  --ck-color-input-border: #c4c4c4;
+  --ck-color-input-text: #333333;
+  --ck-color-input-disabled-background: #f2f2f2;
+  --ck-color-input-disabled-border: #c4c4c4;
+  --ck-color-input-disabled-text: #757575;
+
+  /* Variables para listas */
+  --ck-color-list-background: #ffffff;
+  --ck-color-list-button-hover-background: #e6e6e6;
+  --ck-color-list-button-on-background: #e1f5fe;
+  --ck-color-list-button-on-background-focus: #b3e5fc;
+
+  /* Variables para contenido */
+  --ck-content-font-color: #333333;
+
+  /* Variables adicionales */
+  --ck-color-widget-blurred-border: #c4c4c4;
+  --ck-color-widget-hover-border: #999999;
+  --ck-color-widget-editable-focus-background: #ffffff;
+  --ck-color-tooltip-background: #ffffff;
+  --ck-color-tooltip-text: #333333;
+  --ck-color-panel-background: #ffffff;
+  --ck-color-panel-border: #c4c4c4;
+}
+
+/* Variables CSS para tema oscuro cuando el atributo data-theme es "dark" */
+[data-theme="dark"] {
+  /* Variables CSS de CKEditor para tema oscuro */
+  --ck-color-base-background: #1a1a1a !important;
+  --ck-color-base-foreground: #2d2d2d !important;
+  --ck-color-base-border: #404040 !important;
+  --ck-color-base-action: #61b045 !important;
+  --ck-color-base-focus: #6cb5f9 !important;
+  --ck-color-base-text: #e0e0e0 !important;
+  --ck-color-base-active: #198cf0 !important;
+  --ck-color-base-active-focus: #0e7fe1 !important;
+  --ck-color-focus-border: #47a4f5 !important;
+  --ck-color-text: #e0e0e0 !important;
+  --ck-color-shadow-drop: rgba(0, 0, 0, 0.5) !important;
+  --ck-color-shadow-inner: rgba(0, 0, 0, 0.3) !important;
+
+  /* Variables para botones */
+  --ck-color-button-default-background: transparent !important;
+  --ck-color-button-default-hover-background: #404040 !important;
+  --ck-color-button-default-active-background: #4a4a4a !important;
+  --ck-color-button-default-disabled-background: transparent !important;
+  --ck-color-button-on-background: #2d3748 !important;
+  --ck-color-button-on-hover-background: #404040 !important;
+  --ck-color-button-on-active-background: #4a4a4a !important;
+
+  /* Variables para toolbar */
+  --ck-color-toolbar-background: #2d2d2d !important;
+  --ck-color-toolbar-border: #404040 !important;
+
+  /* Variables para dropdown */
+  --ck-color-dropdown-panel-background: #2d2d2d !important;
+  --ck-color-dropdown-panel-border: #404040 !important;
+
+  /* Variables para input */
+  --ck-color-input-background: #1a1a1a !important;
+  --ck-color-input-border: #404040 !important;
+  --ck-color-input-text: #e0e0e0 !important;
+  --ck-color-input-disabled-background: #2d2d2d !important;
+  --ck-color-input-disabled-border: #404040 !important;
+  --ck-color-input-disabled-text: #888888 !important;
+
+  /* Variables para listas */
+  --ck-color-list-background: #2d2d2d !important;
+  --ck-color-list-button-hover-background: #404040 !important;
+  --ck-color-list-button-on-background: #2d3748 !important;
+  --ck-color-list-button-on-background-focus: #404040 !important;
+
+  /* Variables para contenido */
+  --ck-content-font-color: #e0e0e0 !important;
+
+  /* Variables adicionales para el editor */
+  --ck-color-widget-blurred-border: #404040 !important;
+  --ck-color-widget-hover-border: #666666 !important;
+  --ck-color-widget-editable-focus-background: #1a1a1a !important;
+
+  /* Variables para tooltip */
+  --ck-color-tooltip-background: #2d2d2d !important;
+  --ck-color-tooltip-text: #e0e0e0 !important;
+
+  /* Variables para balloon */
+  --ck-color-panel-background: #2d2d2d !important;
+  --ck-color-panel-border: #404040 !important;
+}

@@ -1,0 +1,451 @@
+/* Estilos para el componente CKEditor */
+.editorContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Variables CSS para tema claro (por defecto) */
+.editorContainer.light {
+  background-color: #ffffff;
+  color: #333333;
+
+  /* Variables CSS de CKEditor para tema claro */
+  --ck-color-base-background: #ffffff;
+  --ck-color-base-foreground: #fafafa;
+  --ck-color-base-border: #c4c4c4;
+  --ck-color-base-action: #61b045;
+  --ck-color-base-focus: #6cb5f9;
+  --ck-color-base-text: #333333;
+  --ck-color-base-active: #198cf0;
+  --ck-color-base-active-focus: #0e7fe1;
+  --ck-color-focus-border: #47a4f5;
+  --ck-color-text: #333333;
+  --ck-color-shadow-drop: rgba(0, 0, 0, 0.15);
+  --ck-color-shadow-inner: rgba(0, 0, 0, 0.1);
+
+  /* Variables para botones */
+  --ck-color-button-default-background: transparent;
+  --ck-color-button-default-hover-background: #e6e6e6;
+  --ck-color-button-default-active-background: #d9d9d9;
+  --ck-color-button-default-disabled-background: transparent;
+  --ck-color-button-on-background: #e1f5fe;
+  --ck-color-button-on-hover-background: #b3e5fc;
+  --ck-color-button-on-active-background: #81d4fa;
+
+  /* Variables para toolbar */
+  --ck-color-toolbar-background: #f5f5f5;
+  --ck-color-toolbar-border: #c4c4c4;
+
+  /* Variables para dropdown */
+  --ck-color-dropdown-panel-background: #ffffff;
+  --ck-color-dropdown-panel-border: #c4c4c4;
+
+  /* Variables para input */
+  --ck-color-input-background: #ffffff;
+  --ck-color-input-border: #c4c4c4;
+  --ck-color-input-text: #333333;
+  --ck-color-input-disabled-background: #f2f2f2;
+  --ck-color-input-disabled-border: #c4c4c4;
+  --ck-color-input-disabled-text: #757575;
+
+  /* Variables para listas */
+  --ck-color-list-background: #ffffff;
+  --ck-color-list-button-hover-background: #e6e6e6;
+  --ck-color-list-button-on-background: #e1f5fe;
+  --ck-color-list-button-on-background-focus: #b3e5fc;
+
+  /* Variables para contenido */
+  --ck-content-font-color: #333333;
+}
+
+/* Variables CSS para tema oscuro */
+.editorContainer.dark {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+
+  /* Variables CSS de CKEditor para tema oscuro */
+  --ck-color-base-background: #1a1a1a;
+  --ck-color-base-foreground: #2d2d2d;
+  --ck-color-base-border: #404040;
+  --ck-color-base-action: #61b045;
+  --ck-color-base-focus: #6cb5f9;
+  --ck-color-base-text: #e0e0e0;
+  --ck-color-base-active: #198cf0;
+  --ck-color-base-active-focus: #0e7fe1;
+  --ck-color-focus-border: #47a4f5;
+  --ck-color-text: #e0e0e0;
+  --ck-color-shadow-drop: rgba(0, 0, 0, 0.5);
+  --ck-color-shadow-inner: rgba(0, 0, 0, 0.3);
+
+  /* Variables para botones */
+  --ck-color-button-default-background: transparent;
+  --ck-color-button-default-hover-background: #404040;
+  --ck-color-button-default-active-background: #4a4a4a;
+  --ck-color-button-default-disabled-background: transparent;
+  --ck-color-button-on-background: #2d3748;
+  --ck-color-button-on-hover-background: #404040;
+  --ck-color-button-on-active-background: #4a4a4a;
+
+  /* Variables para toolbar */
+  --ck-color-toolbar-background: #2d2d2d;
+  --ck-color-toolbar-border: #404040;
+
+  /* Variables para dropdown */
+  --ck-color-dropdown-panel-background: #2d2d2d;
+  --ck-color-dropdown-panel-border: #404040;
+
+  /* Variables para input */
+  --ck-color-input-background: #1a1a1a;
+  --ck-color-input-border: #404040;
+  --ck-color-input-text: #e0e0e0;
+  --ck-color-input-disabled-background: #2d2d2d;
+  --ck-color-input-disabled-border: #404040;
+  --ck-color-input-disabled-text: #888888;
+
+  /* Variables para listas */
+  --ck-color-list-background: #2d2d2d;
+  --ck-color-list-button-hover-background: #404040;
+  --ck-color-list-button-on-background: #2d3748;
+  --ck-color-list-button-on-background-focus: #404040;
+
+  /* Variables para contenido */
+  --ck-content-font-color: #e0e0e0;
+
+  /* Variables adicionales para el editor */
+  --ck-color-widget-blurred-border: #404040;
+  --ck-color-widget-hover-border: #666666;
+  --ck-color-widget-editable-focus-background: #1a1a1a;
+
+  /* Variables para tooltip */
+  --ck-color-tooltip-background: #2d2d2d;
+  --ck-color-tooltip-text: #e0e0e0;
+
+  /* Variables para balloon */
+  --ck-color-panel-background: #2d2d2d;
+  --ck-color-panel-border: #404040;
+}
+
+/* Botón de cambio de tema */
+.themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.themeToggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.themeToggle:active {
+  transform: translateY(0);
+}
+
+/* Panel de control de documentos */
+.documentsPanel {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.light .documentsPanel {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.dark .documentsPanel {
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+}
+
+.documentsPanel h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.light .documentsPanel h3 {
+  color: #495057;
+}
+
+.dark .documentsPanel h3 {
+  color: #e0e0e0;
+}
+
+/* Botones de acción */
+.actionButton {
+  margin-right: 12px;
+  margin-bottom: 8px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.saveButton {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+.exportButton {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: white;
+}
+
+.actionButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.actionButton:active {
+  transform: translateY(0);
+}
+
+/* Sección de documentos guardados */
+.savedDocumentsSection {
+  margin-top: 16px;
+}
+
+.savedDocumentsSection h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.light .savedDocumentsSection h4 {
+  color: #6c757d;
+}
+
+.dark .savedDocumentsSection h4 {
+  color: #adb5bd;
+}
+
+.documentsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.documentButton {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.light .documentButton {
+  background-color: #6c757d;
+  color: white;
+}
+
+.dark .documentButton {
+  background-color: #495057;
+  color: #e0e0e0;
+}
+
+.documentButton:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Wrapper del editor */
+.editorWrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.light .editorWrapper {
+  background-color: #ffffff;
+}
+
+.dark .editorWrapper {
+  background-color: #1a1a1a;
+}
+
+/* Estilos adicionales para asegurar que el tema se aplique completamente */
+.dark .ck.ck-editor {
+  background: var(--ck-color-base-background) !important;
+  border-color: var(--ck-color-base-border) !important;
+}
+
+.dark .ck.ck-editor__main > .ck-editor__editable {
+  background: var(--ck-color-base-background) !important;
+  color: var(--ck-color-base-text) !important;
+  border-color: var(--ck-color-base-border) !important;
+}
+
+.dark .ck.ck-toolbar {
+  background: var(--ck-color-toolbar-background) !important;
+  border-color: var(--ck-color-toolbar-border) !important;
+}
+
+.dark .ck.ck-dropdown__panel {
+  background: var(--ck-color-dropdown-panel-background) !important;
+  border-color: var(--ck-color-dropdown-panel-border) !important;
+}
+
+/* Forzar aplicación de variables CSS en elementos específicos */
+.dark .ck-content {
+  color: var(--ck-content-font-color) !important;
+}
+
+.dark .ck-content h1,
+.dark .ck-content h2,
+.dark .ck-content h3,
+.dark .ck-content h4,
+.dark .ck-content h5,
+.dark .ck-content h6 {
+  color: var(--ck-content-font-color) !important;
+}
+
+.dark .ck-content p,
+.dark .ck-content li,
+.dark .ck-content td,
+.dark .ck-content th {
+  color: var(--ck-content-font-color) !important;
+}
+
+/* Scrollbars para el tema oscuro */
+.dark .ck.ck-editor__editable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark .ck.ck-editor__editable::-webkit-scrollbar-track {
+  background: var(--ck-color-base-background);
+}
+
+.dark .ck.ck-editor__editable::-webkit-scrollbar-thumb {
+  background: var(--ck-color-base-border);
+  border-radius: 4px;
+}
+
+.dark .ck.ck-editor__editable::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Selección de texto en tema oscuro */
+.dark .ck-editor__editable ::selection {
+  background-color: rgba(0, 123, 255, 0.3) !important;
+}
+
+.dark .ck-editor__editable ::-moz-selection {
+  background-color: rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .editorContainer {
+    padding: 10px;
+  }
+
+  .themeToggle {
+    top: 10px;
+    right: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .documentsPanel {
+    padding: 15px;
+  }
+
+  .actionButton {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.editorContainer {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Audio container styles */
+.audioContainer {
+  margin: 16px 0;
+  padding: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.light .audioContainer {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.dark .audioContainer {
+  background-color: #343a40;
+  border: 1px solid #495057;
+}
+
+.audioHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.audioIcon {
+  font-size: 18px;
+}
+
+.audioFilename {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.light .audioFilename {
+  color: #495057;
+}
+
+.dark .audioFilename {
+  color: #e0e0e0;
+}
+
+.audioPlayer {
+  width: 100%;
+  height: 40px;
+}
